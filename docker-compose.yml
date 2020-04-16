@@ -12,7 +12,7 @@ services:
     ports:
       - 8080:8080
     networks:
-      fiap_network1:
+      cateno_network1:
         ipv4_address: 172.27.0.2
     external_links: 
       - service-container:service-container
@@ -29,7 +29,7 @@ services:
     ports:
     - 9091:9091
     networks:
-      fiap_network1:
+      cateno_network1:
         ipv4_address: 172.27.0.5
     external_links: 
       - cateno-gateway:cateno-gateway
@@ -47,7 +47,7 @@ services:
       ports:
         - 9090:9090
       networks:
-        fiap_network1:
+        cateno_network1:
           ipv4_address: 172.27.0.6
   grafana:
       image: grafana/grafana:latest
@@ -55,7 +55,7 @@ services:
       ports:
         - "3000:3000"
       networks:
-        fiap_network1:
+        cateno_network1:
           ipv4_address: 172.27.0.7
       env_file:
         - 'env.grafana'
@@ -64,5 +64,5 @@ services:
 
 
 networks:
-  fiap_network1:
+  cateno_network1:
     external: true
